@@ -1,0 +1,93 @@
+libxpp3-java (1.1.4c-3) unstable; urgency=medium
+
+  * Team upload.
+  * Fixed the build failure with Java 9 (Closes: #893084)
+  * Removed the javadoc from the binary package
+  * Build with the DH sequencer instead of CDBS
+  * Moved the package to Git
+  * Standards-Version updated to 4.1.3
+  * Switch to debhelper level 11
+  * Updated debian/copyright to the Copyright Format 1.0
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Fri, 16 Mar 2018 13:28:02 +0100
+
+libxpp3-java (1.1.4c-2) unstable; urgency=low
+
+  * Switch to source format 3.0.
+  * Update Standards-Version: 3.9.1.
+  * Add Vcs-* headers.
+
+ -- Torsten Werner <twerner@debian.org>  Thu, 18 Aug 2011 14:50:59 +0200
+
+libxpp3-java (1.1.4c-1) unstable; urgency=low
+
+  [ Ludovic Claude ]
+  * New upstream version
+  * Add myself to Uploaders
+  * Add ${misc:Depends} to Depends to clear Lintian warnings
+  * Remove Depends on Java runtimes as it is a library
+  * Change section to java
+  * Bump up Standards-Version to 3.8.2
+  * Add the Maven POM to the package
+  * Add a Build-Depends-Indep dependency on maven-repo-helper and quilt
+  * Use quilt to patch the sources, easier to work with
+  * Use default-jdk instead of kaffe for the build
+
+  [ Torsten Werner ]
+  * Actually I did add Ludovic to Uploaders.
+  * Add myself to Uploaders.
+  * Switch to debhelper compat level 5.
+  * Reference the common-licenses file for LGPL-2.1.
+
+ -- Torsten Werner <twerner@debian.org>  Sat, 15 Aug 2009 16:42:50 +0200
+
+libxpp3-java (1.1.3.4.O-4) unstable; urgency=low
+
+  * Do not include the javax.xml.namespace.QName class since it is likely
+    to cause conflicts. (Closes: #500909)
+  * Move dependencies for clean target to Build-depends.
+  * Update to policy version 3.8.0.1.
+    - Describe patch management in README.source.
+  * debian/copyright: Completed copyright information.
+  * Added myself to Uploaders, removed Wolfgang.
+
+ -- Marcus Better <marcus@better.se>  Thu, 02 Oct 2008 17:04:04 +0200
+
+libxpp3-java (1.1.3.4.O-3) unstable; urgency=low
+
+  * Removed explicit usage of jikes build compiler property
+    for kaffe jikes -> ecj transition
+  * Added patch to raise build target to 1.3 - required for ecj
+
+ -- Wolfgang Baer <WBaer@gmx.de>  Fri,  6 Jan 2006 19:06:52 +0100
+
+libxpp3-java (1.1.3.4.O-2) unstable; urgency=low
+
+  * Added ant-optional due to ant reorganization
+  * Registered javadoc api with doc-base
+
+  * Upload sponsored by Arnaud Vandyck
+
+ -- Wolfgang Baer <WBaer@gmx.de>  Fri, 16 Sep 2005 15:36:16 +0200
+
+libxpp3-java (1.1.3.4.O-1) unstable; urgency=low
+
+  * New upstream release
+  * Upload to unstable
+  * Changed libant1.6-java build-dep to ant
+  * Standards-Version 3.6.2 (no changes)
+
+  * Upload sponsored by Petter Reinholdtsen
+
+ -- Wolfgang Baer <WBaer@gmx.de>  Sat, 13 Aug 2005 14:03:46 +0200
+
+libxpp3-java (1.1.3.4.M-1) experimental; urgency=low
+
+  * Initial Release, based on the work of Jorge Perez Burgos (closes: #251303)
+  * Included additional xpath library
+  * Enabled junit tests
+  * Included xmlpull api documentation
+  * Reworked description to show differences to the xpp2 version
+
+ -- Wolfgang Baer <WBaer@gmx.de>  Sat, 23 Apr 2005 15:23:09 +0200
+

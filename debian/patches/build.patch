@@ -1,0 +1,32 @@
+--- a/build.xml
++++ b/build.xml
+@@ -255,7 +255,7 @@
+ 
+   <target name="builder" depends="prepare,api">
+     <javac debug="${debug}" deprecation="${deprecation}" source="1.2" target="1.1"
+-       srcdir="${src_builder}" destdir="${build_classes}" classpath="${build_api}"/>
++       srcdir="${src_builder}" destdir="${build_classes}" classpath="${build_api}" excludes="javax/xml/" />
+   </target>
+ 
+ 
+@@ -424,10 +424,10 @@
+ 
+   <target name="tests_addons" if="junit_present"
+      depends="check_junit,impl,update_tests,wrapper,dom2_builder">
+-    <javac debug="${debug}" deprecation="${deprecation}" source="1.2" target="1.1"
++    <!--javac debug="${debug}" deprecation="${deprecation}" source="1.3" target="1.3"
+       srcdir="${src_addons_tests}" destdir="${build_tests}"
+       classpath="${build_api}:${build_classes}"      
+-      />
++      /-->
+   </target>
+ 
+   <target name="tests_main" if="junit_present"
+@@ -435,6 +435,7 @@
+     <mkdir dir="${build_tests}"/>
+     <javac debug="${debug}" deprecation="${deprecation}" source="1.2" target="1.1"
+       srcdir="${src_tests}" destdir="${build_tests}" classpath="${build_api}"
++      encoding="ISO-8859-1"
+       />
+     <copy todir="${build_tests_xml}">
+       <fileset dir="${src_xml_tests}">

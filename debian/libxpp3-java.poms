@@ -1,0 +1,3 @@
+debian/xpp3.pom       --java-lib --artifact=build/xpp3-*.jar
+debian/xpp3_min.pom   --java-lib --artifact=build/xpp3_min-*.jar   --usj-name=xpp3-min
+debian/xpp3_xpath.pom --java-lib --artifact=build/xpp3_xpath-*.jar --usj-name=xpp3-xpath

@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/pkg-info.mk
+
+%:
+	dh $@ --with maven-repo-helper
+
+override_dh_auto_build:
+	dh_auto_build -- xpp3 junit
+
+get-orig-source:
+	-uscan --download-current-version --force-download --rename
+
+get-orig-pom: XPP3_XPATH_VERSION=1.1.3.4.O
+get-orig-pom:
+	wget -O debian/xpp3.pom http://repository.sonatype.org/service/local/repositories/central-proxy/content/xpp3/xpp3/$(DEB_VERSION_UPSTREAM)/xpp3-$(DEB_VERSION_UPSTREAM).pom
+	wget -O debian/xpp3_min.pom http://repository.sonatype.org/service/local/repositories/central-proxy/content/xpp3/xpp3_min/$(DEB_VERSION_UPSTREAM)/xpp3_min-$(DEB_VERSION_UPSTREAM).pom
+	wget -O debian/xpp3_xpath.pom http://repository.sonatype.org/service/local/repositories/central-proxy/content/xpp3/xpp3_xpath/$(XPP3_XPATH_VERSION)/xpp3_xpath-$(XPP3_XPATH_VERSION).pom
+	perl -p -i -e 's/<version>$(XPP3_XPATH_VERSION)/<version>$(DEB_VERSION_UPSTREAM)/' debian/xpp3_xpath.pom

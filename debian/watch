@@ -1,0 +1,2 @@
+version=3
+http://www.extreme.indiana.edu/dist/java-repository/xpp3/distributions/xpp3-([[:alnum:].]+)_src\.(?:tgz|zip)

@@ -1,0 +1,5 @@
+Upstream tarball changes
+========================
+
+From the original upstream distribution the prebuilt
+jar files were removed with rm *.jar in the basedir.
